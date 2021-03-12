@@ -20,6 +20,9 @@ def parse_day_data(raw):
     disclaimer, stations, legend, header, data
     """
     # split the raw text in chunks
+    with open("knmi_raw.html", "w") as fp:
+        fp.write(raw)
+
     chunks = chunk_splitter(raw=raw)
 
     # parse the disclaimer
