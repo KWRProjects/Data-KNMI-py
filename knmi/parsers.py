@@ -1,3 +1,4 @@
+import os
 import re
 from io import StringIO
 import datetime as dt
@@ -20,7 +21,7 @@ def parse_day_data(raw):
     disclaimer, stations, legend, header, data
     """
     # split the raw text in chunks
-    with open("knmi_raw.html", "w") as fp:
+    with open(os.path.join(os.getcwd(), "temp", "knmi_raw.html"), "w") as fp:
         fp.write(raw)
 
     chunks = chunk_splitter(raw=raw)
